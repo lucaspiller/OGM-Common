@@ -66,7 +66,7 @@
               <ParameterType Id="%AID%_PT-DelayBase10" Name="DelayBase10">
                 <TypeRestriction Base="Value" SizeInBit="2">
                   <Enumeration Text="1/10  Sekunde(n)" Value="3" Id="%ENID%">
-                    <op:Translation Language="en-US" Text="1/10 second(s)" />
+                    <op:Translation Language="en-US" Text="Millisecond(s)" />
                   </Enumeration>
                   <Enumeration Text="Sekunde(n)" Value="0" Id="%ENID%">
                     <op:Translation Language="en-US" Text="Second(s)" />
@@ -383,11 +383,21 @@
               <!-- Status LEDs-->
               <ParameterType Id="%AID%_PT-SLEDFunc" Name="SLEDFunc">
                 <TypeRestriction Base="Value" SizeInBit="16" UIHint="DropDown">
-                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%" />
-                  <Enumeration Text="Prog-LED" Value="1" Id="%ENID%" />
-                  <Enumeration Text="Gerätetatus" Value="2" Id="%ENID%" />
-                  <Enumeration Text="Busstatus" Value="3" Id="%ENID%" />
-                  <Enumeration Text="Zeitstatus" Value="4" Id="%ENID%" />
+                  <Enumeration Text="Deaktiviert" Value="0" Id="%ENID%">
+                    <op:Translation Language="en-US" Text="Disabled" />
+                  </Enumeration>
+                  <Enumeration Text="Prog-LED" Value="1" Id="%ENID%">
+                    <op:Translation Language="en-US" Text="Prog LED" />
+                  </Enumeration>
+                  <Enumeration Text="Gerätetatus" Value="2" Id="%ENID%">
+                    <op:Translation Language="en-US" Text="Device status" />
+                  </Enumeration>
+                  <Enumeration Text="Busstatus" Value="3" Id="%ENID%">
+                    <op:Translation Language="en-US" Text="Bus status" />
+                  </Enumeration>
+                  <Enumeration Text="Zeitstatus" Value="4" Id="%ENID%">
+                    <op:Translation Language="en-US" Text="Time status" />
+                  </Enumeration>
                 </TypeRestriction>
               </ParameterType>
             </ParameterTypes>
@@ -396,9 +406,7 @@
               <!-- Some IDs are over 100. These are parameters that have also been moved here from the logic module -->
 
               <!-- OpenKNX Logo -->
-              <Parameter Id="%AID%_P-%TT%00001" Name="ETS" ParameterType="%AID%_PT-ETS" Text="ETS" Access="Read" Value="">
-                <op:Translation Language="en-US" Text="ETS" />
-              </Parameter>
+              <Parameter Id="%AID%_P-%TT%00001" Name="ETS" ParameterType="%AID%_PT-ETS" Text="ETS" Access="Read" Value="" />
 
               <!-- Helper with 0 An auxiliary parameter that is always 0 to make a check against it -->
               <Parameter Id="%AID%_P-%TT%00099" Name="SelectHelper" ParameterType="%AID%_PT-CheckBox" Text="" Value="0" Access="None"/>
@@ -499,7 +507,7 @@
                   <op:Translation Language="en-US" Text="Manual saving" />
                 </Parameter>
                 <Parameter Id="%AID%_UP-%TT%00090" Name="PeriodicSave"      ParameterType="%AID%_PT-PeriodicSave" Offset="1" BitOffset="0" Text="Zyklisches speichern" Value="%BASE_PeriodicSave%">
-                  <op:Translation Language="en-US" Text="Cyclic saving" />
+                  <op:Translation Language="en-US" Text="Periodic saving" />
                 </Parameter>
                 <Parameter Id="%AID%_UP-%TT%00020" Name="Info1LedFunc"      ParameterType="%AID%_PT-SLEDFunc"     Offset="2" BitOffset="0" Text="Info1%BASE_Info1LedLabel%" Value="%BASE_Info1LedFunc%" Access="%BASE_Info1LedFunc_Access%"/>
                 <Parameter Id="%AID%_UP-%TT%00021" Name="Info2LedFunc"      ParameterType="%AID%_PT-SLEDFunc"     Offset="4" BitOffset="0" Text="Info2%BASE_Info2LedLabel%" Value="%BASE_Info2LedFunc%" Access="%BASE_Info2LedFunc_Access%"/>
@@ -572,7 +580,7 @@
             </ParameterRefs>
             <ComObjectTable>
               <ComObject Id="%AID%_O-%TT%00001" Name="Heartbeat"      Text="In Betrieb"       Number="1"  FunctionText="Zyklisch" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-5">
-                <op:Translation Language="en-US" Text="In operation" FunctionText="Cyclic" />
+                <op:Translation Language="en-US" Text="In operation" FunctionText="Periodic" />
               </ComObject>
               <ComObject Id="%AID%_O-%TT%00002" Name="Time"           Text="Uhrzeit"          Number="2"  FunctionText="Eingang" ObjectSize="3 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-10-1">
                 <op:Translation Language="en-US" Text="Time" FunctionText="Input" />
@@ -655,7 +663,7 @@
                 <ParameterBlock Id="%AID%_MD-%TT%00001_PB-nnn" Inline="true">
                   <ParameterRefRef RefId="%AID%_MD-%TT%00001_P-%TT%00001_R-%TT%0000101" HelpContext="BASE-Comment" />
                   <Button Id="%AID%_MD-%TT%00001_B-%TT%00001" Text="Alle '\n' im Text durch neue Zeile(n) ersetzen" EventHandler="newline" EventHandlerParameters="{ &quot;textbox&quot;:&quot;BASE_Kommentar-%TT%00001&quot; }">
-                    <op:Translation Language="en-US" Text="Replace all '\\n' in text with new line(s)" />
+                    <op:Translation Language="en-US" Text="Replace all '\n' in text with new line(s)" />
                   </Button>
                 </ParameterBlock>
               </Dynamic>
@@ -664,8 +672,6 @@
           <Dynamic>
             <!-- <ChannelIndependentBlock> -->
             <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="OpenKNX" Icon="openknx" HelpContext="BASE-OpenKNX">
-              <op:Translation Language="en-US" Text="OpenKNX" />
-
               <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="BASE-OpenKNX">
                 <op:Translation Language="en-US" Text="General" />
                 <!-- Hidden -->

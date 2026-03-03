@@ -29,9 +29,7 @@
               <!-- PT are used from Common.share.xml only -->
             </ParameterTypes>
             <Parameters>
-              <Parameter Id="%AID%_P-%TT%00001" Name="ETS" ParameterType="%AID%_PT-ETS" Text="ETS" Access="Read" Value="">
-                <op:Translation Language="en-US" Text="ETS" />
-              </Parameter>
+              <Parameter Id="%AID%_P-%TT%00001" Name="ETS" ParameterType="%AID%_PT-ETS" Text="ETS" Access="Read" Value="" />
 
               <!-- Helper with 0 An auxiliary parameter that is always 0 to make a check against it -->
               <Parameter Id="%AID%_P-%TT%00099" Name="SelectHelper" ParameterType="%AID%_PT-CheckBox" Text="" Value="0" Access="None"/>
@@ -106,8 +104,6 @@
           </Static>
           <Dynamic>
             <Channel Id="%AID%_CH-%PREFIX%" Number="%PREFIX%" Name="Main" Text="OpenKNX" Icon="openknx" HelpContext="BASE-OpenKNX">
-              <op:Translation Language="en-US" Text="OpenKNX" />
-
               <ParameterBlock Id="%AID%_PB-nnn" Name="Basic" Text="Allgemein" Icon="cog-outline" HelpContext="BASE-OpenKNX">
                 <op:Translation Language="en-US" Text="General" />
                 <!-- Hidden -->

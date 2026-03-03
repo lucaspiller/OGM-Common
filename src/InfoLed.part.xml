@@ -47,7 +47,9 @@
                                                 <Column Id="%AID%_PB-nnn_C-1" Name="Col1" Width="2%" />
                                                 <Column Id="%AID%_PB-nnn_C-2" Name="Col2" Width="100%" />
                                             </Columns>
-                                            <ParameterSeparator Id="%AID%_PS-nnn" Text="Auf dieser Seite können die Info-LEDs angepasst werden." Cell="1,2" />
+                                            <ParameterSeparator Id="%AID%_PS-nnn" Text="Auf dieser Seite können die Info-LEDs angepasst werden." Cell="1,2">
+                                                <op:Translation Language="en-US" Text="The info LEDs can be adjusted on this page." />
+                                            </ParameterSeparator>
                                         </ParameterBlock>
 
                                         <choose ParamRefId="%AID%_P-%TT%00099_R-%TT%0009901">
@@ -63,7 +65,9 @@
                                                         <Column Id="%AID%_PB-nnn_C-3" Name="Col3" Width="94%" />
                                                     </Columns>
                                                     <ParameterRefRef RefId="%AID%_UP-%TT%00029_R-%TT%0002901" Cell="1,2" />
-                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Geräteabhängige Vorbelegung" Cell="1,3" />
+                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Geräteabhängige Vorbelegung" Cell="1,3">
+                                                        <op:Translation Language="en-US" Text="Device-dependent preset" />
+                                                    </ParameterSeparator>
                                                 </ParameterBlock>
 
                                             </when>
@@ -82,8 +86,12 @@
                                                         <Column Id="%AID%_PB-nnn_C-4" Name="Col4" Width="80%" />
                                                     </Columns>
                                                     <ParameterSeparator Id="%AID%_PS-nnn" Text="LED" Cell="1,2" UIHint="Headline" />
-                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Funktion" Cell="1,3" UIHint="Headline" />
-                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Notiz" Cell="1,4" UIHint="Headline" />
+                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Funktion" Cell="1,3" UIHint="Headline">
+                                                        <op:Translation Language="en-US" Text="Function" />
+                                                    </ParameterSeparator>
+                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Notiz" Cell="1,4" UIHint="Headline">
+                                                        <op:Translation Language="en-US" Text="Note" />
+                                                    </ParameterSeparator>
                                                 </ParameterBlock>
 
                                                 <ParameterBlock Id="%AID%_PB-nnn" Inline="true" Layout="Grid" HelpContext="BASE-Info-LEDs">
@@ -96,8 +104,12 @@
                                                         <Column Id="%AID%_PB-nnn_C-3" Name="Col3" Width="40%" />
                                                         <Column Id="%AID%_PB-nnn_C-4" Name="Col4" Width="80%" />
                                                     </Columns>
-                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Prog" Cell="1,2" />
-                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Prog-LED" Cell="1,3" />
+                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Prog" Cell="1,2">
+                                                        <op:Translation Language="en-US" Text="Prog" />
+                                                    </ParameterSeparator>
+                                                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Prog-LED" Cell="1,3">
+                                                        <op:Translation Language="en-US" Text="Prog LED" />
+                                                    </ParameterSeparator>
                                                 </ParameterBlock>
 
                                                 <choose ParamRefId="%AID%_P-%TT%00099_R-%TT%0009901">
